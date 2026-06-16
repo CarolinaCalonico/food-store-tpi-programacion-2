@@ -109,4 +109,5 @@ public class PedidoService {
     
         pedido.setEliminado(true);
         pedido.calcularTotal();
+        }
     }
