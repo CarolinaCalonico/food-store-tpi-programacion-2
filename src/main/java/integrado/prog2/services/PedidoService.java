@@ -98,9 +98,15 @@ public class PedidoService {
 
     public void eliminarLogico(Long id) throws EntidadNoEncontradaException {
         Pedido pedido = buscarActivoPorId(id);
-        pedido.setEliminado(true);
+    
         for (var detalle : pedido.getDetalles()) {
-            detalle.setEliminado(true);
+            if (!detalle.isEliminado() && detalle.getProducto() != null) {
+                Producto producto = detalle.getProducto();
+                producto.setStock(producto.getStock() + detalle.getCantidad());
+                detalle.setEliminado(true);
+            }
         }
+    
+        pedido.setEliminado(true);
+        pedido.calcularTotal();
     }
-}
