@@ -2,56 +2,106 @@
 
 Trabajo Practico Integrador de Programacion 2.
 
+## Descripcion
+
+Food Store es una aplicacion de consola desarrollada en Java, orientada a la gestion de pedidos de comida.  
+El sistema permite administrar categorias, productos, usuarios y pedidos mediante operaciones CRUD desde un menu interactivo.
+
+La informacion se almacena en memoria durante la ejecucion del programa utilizando colecciones, sin conexion a base de datos.
+
 ## Requisitos
 
 - Java 21 o superior.
-- IDE recomendado: NetBeans, IntelliJ IDEA o VS Code con extension de Java.
+- Apache NetBeans, IntelliJ IDEA o Visual Studio Code con extension de Java.
+- Maven.
 
-## Como ejecutar desde consola
+## Como ejecutar el proyecto
+
+### Desde NetBeans
+
+1. Descargar o clonar el repositorio.
+2. Abrir el proyecto en NetBeans.
+3. Verificar que el JDK configurado sea Java 21.
+4. Ejecutar la clase principal:
+integrado.prog2.Main
+
+### Desde consola
 
 Desde la carpeta raiz del proyecto:
 
-```bash
-javac -d out $(find src -name "*.java")
-java -cp out integrado.prog2.Main
-```
+mvn clean compile
+mvn exec:java
 
-En Windows PowerShell, una alternativa es compilar desde el IDE o ejecutar:
+### Funcionalidades implementadas
+## Categorias
+Listar categorias activas.
+Crear categorias.
+Editar categorias existentes.
+Eliminar categorias mediante baja logica.
+Validacion de nombre unico.
+Validacion de datos de entrada.
 
-```powershell
-Get-ChildItem -Recurse src -Filter *.java | ForEach-Object { $_.FullName } > sources.txt
-javac -d out @sources.txt
-java -cp out integrado.prog2.Main
-```
+## Productos
+Listar productos activos.
+Crear productos asociados a una categoria.
+Editar productos.
+Eliminar productos mediante baja logica.
+Validacion de precio y stock.
+Validacion de nombre unico.
+Validacion de categoria asociada.
 
-## Funcionalidades implementadas
+## Usuarios
+Listar usuarios activos.
+Crear usuarios.
+Editar usuarios.
+Eliminar usuarios mediante baja logica.
+Validacion de mail unico.
+Relacion uno a uno entre Usuario y PerfilUsuario.
 
-- CRUD de Categorias.
-- CRUD de Productos.
-- CRUD de Usuarios.
-- CRUD de Pedidos con detalles.
-- Baja logica mediante el atributo `eliminado`.
-- Colecciones en memoria mediante `ArrayList`.
-- Herencia desde clase abstracta `Base`.
-- Interface `Calculable` implementada por `Pedido`.
-- Excepciones propias para datos invalidos, duplicados, entidades no encontradas y stock insuficiente.
-- Relacion 1 a 1 real entre `Usuario` y `PerfilUsuario`.
-- Validaciones de entrada desde menu.
+## Pedidos
+Listar pedidos activos.
+Crear pedidos con detalles.
+Agregar productos y cantidades al pedido.
+Calcular subtotales y total del pedido.
+Actualizar estado y forma de pago.
+Eliminar pedidos mediante baja logica.
+Validacion de stock disponible.
+Cancelacion segura del pedido ante errores para evitar inconsistencias.
 
-## Datos iniciales
+### Conceptos aplicados
+Programacion Orientada a Objetos.
+Encapsulamiento.
+Herencia.
+Polimorfismo.
+Clases abstractas.
+Interfaces.
+Colecciones.
+Enumeraciones.
+Excepciones propias.
+Baja logica.
+Separacion por capas.
 
-El sistema carga automaticamente:
+### Estructura del proyecto
+src/main/java/integrado/prog2
+├── Main.java
+├── entities
+├── enums
+├── exceptions
+├── interfaces
+├── menu
+└── services
 
-- 2 categorias.
-- 2 productos.
-- 1 usuario.
+## Clase principal
+integrado.prog2.Main
 
-Esto permite probar pedidos sin tener que cargar todo desde cero.
+Video demostrativo
 
-## Video demostrativo
+Pendiente de carga.
 
-Agregar aqui el enlace publico al video.
+Informe PDF
 
-## Documentacion PDF
+Pendiente de carga.
 
-Agregar aqui el enlace al PDF o incluir el PDF en la raiz del repositorio.
+Repositorio
+
+Este repositorio contiene el codigo fuente completo del proyecto Food Store.
