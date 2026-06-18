@@ -114,11 +114,11 @@ integrado.prog2.Main
 
 ## Video demostrativo
 
-Pendiente de carga.
+https://youtu.be/JplSQpLW3U8
 
 ## Informe PDF
 
-Pendiente de carga.
+Informe_FoodStore_TPI.pdf
 
 ## Repositorio
 
