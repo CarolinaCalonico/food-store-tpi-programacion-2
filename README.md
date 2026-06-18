@@ -122,4 +122,4 @@ Informe_FoodStore_TPI.pdf
 
 ## Repositorio
 
-Este repositorio contiene el codigo fuente completo del proyecto Food Store.
+https://github.com/CarolinaCalonico/food-store-tpi-programacion-2.git
